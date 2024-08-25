@@ -5,49 +5,13 @@
 		<nav class="navbar navbar-expand-lg navbar-dark bg-light top-nav">
 			<div class="container">
 				<a class="navbar-brand" href="{{url('/')}}">
-					<img src="{{asset('assets/images/logo.png')}}" alt="logo" />
+					<img src="{{asset('storage/'.$value[2])}}" alt="logo" />
 				</a>
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="fas fa-bars"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link active" href="{{url('/')}}">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{url('about')}}">About</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{url('services')}}">Services</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages <i class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-								<a class="dropdown-item" href="faq.html">FAQ</a>
-								<a class="dropdown-item" href="404.html">404</a>
-								<a class="dropdown-item" href="pricing.html">Pricing Table</a>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio <i class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-								<a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-								<a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-sort-down"></i></a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-								<a class="dropdown-item" href="blog.html">Blog</a>
-								<a class="dropdown-item" href="blog-post.html">Blog Post</a>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{url('contact')}}">Contact</a>
-						</li>
-					</ul>
+					<ul class="navbar-nav ml-auto" id="navbar-ul"></ul>
 				</div>
 			</div>
 		</nav>
@@ -60,36 +24,13 @@
 					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 				</ol>
 				<div class="carousel-inner" role="listbox">
-					<!-- Slide One - Set the background image for this slide in the line below -->
 					<div class="carousel-item active" style="background-image: url('assets/images/slider-01.jpg')">
 						<div class="carousel-caption d-none d-md-block">
-							<h3>Welcome to Abram</h3>
-							<p>A Great Theme For Business Consulting</p>
-						</div>
-					</div>
-					<!-- Slide Two - Set the background image for this slide in the line below -->
-					<div class="carousel-item" style="background-image: url('assets/images/slider-02.jpg')">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>Best Consulting Services.</h3>
-							<p>A Great Theme For Business Consulting</p>
-						</div>
-					</div>
-					<!-- Slide Three - Set the background image for this slide in the line below -->
-					<div class="carousel-item" style="background-image: url('assets/images/slider-03.jpg')">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>Welcome to Abram</h3>
-							<p>A Great Theme For Business Consulting</p>
+							<h3>Welcome to {{$value[0]}}</h3>
+							<p>{{$value[1]}}</p>
 						</div>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
 			</div>
 		</header>
 
@@ -100,15 +41,8 @@
 			<div class="about-main">
 				<div class="row">
 					<div class="col-lg-6">
-						<h2>Welcome to Abram</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-						<h5>Our smart approach</h5>
-						<ul>
-							<li>Sed at tellus eu quam posuere mattis.</li>
-							<li>Phasellus quis erat et enim laoreet posuere ac porttitor ipsum.</li>
-							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-						</ul>
+						<h2>Welcome to {{$value[0]}}</h2>
+						<p>{{$value[1]}}</p>
 					</div>
 					<div class="col-lg-6">
 						<img class="img-fluid rounded" src="{{asset('assets/images/about-img.jpg')}}" alt="" />
@@ -122,183 +56,16 @@
 			<div class="container">
 				<h1 class="py-4">Our Best Services </h1>
 				<!-- Services Section -->
-				<div class="row">
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100">
-							<div class="card-img">
-								<img class="img-fluid" src="{{asset('assets/images/services-img-01.jpg')}}" alt="" />
-							</div>
-							<div class="card-body">
-								<h4 class="card-header"> Analytics </h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100">
-							<div class="card-img">
-								<img class="img-fluid" src="{{asset('assets/images/services-img-02.jpg')}}" alt="" />
-							</div>
-							<div class="card-body">
-								<h4 class="card-header"> Applications </h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100">
-							<div class="card-img">
-								<img class="img-fluid" src="{{asset('assets/images/services-img-03.jpg')}}" alt="" />
-							</div>
-							<div class="card-body">
-								<h4 class="card-header"> Business Process </h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100">
-							<div class="card-img">
-								<img class="img-fluid" src="{{asset('assets/images/services-img-04.jpg')}}" alt="" />
-							</div>
-							<div class="card-body">
-								<h4 class="card-header"> Consulting </h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100">
-							<div class="card-img">
-								<img class="img-fluid" src="{{asset('assets/images/services-img-05.jpg')}}" alt="" />
-							</div>
-							<div class="card-body">
-								<h4 class="card-header"> Infrastructure </h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mb-4">
-						<div class="card h-100">
-							<div class="card-img">
-								<img class="img-fluid" src="{{asset('assets/images/services-img-06.jpg')}}" alt="" />
-							</div>
-							<div class="card-body">
-								<h4 class="card-header"> Product Engineering </h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div class="row" id="row-services"></div>
 				<!-- /.row -->
 			</div>
 		</div>
 
 		<div class="container">
-			<!-- Portfolio Section -->
+			<!-- Project Section -->
 			<div class="portfolio-main">
-				<h2>Our Portfolio</h2>
-				<div class="col-lg-12">
-					<div class="project-menu text-center">
-						<button class="btn btn-primary active" data-filter="*">All</button>
-						<button data-filter=".business" class="btn btn-primary">Business</button>
-						<button data-filter=".travel" class="btn btn-primary">Travel</button>
-						<button data-filter=".financial" class="btn btn-primary">Financial</button>
-						<button data-filter=".academic" class="btn btn-primary">Academic</button>
-					</div>
-				</div>
-				<div id="projects" class="projects-main row">
-					<div class="col-lg-4 col-sm-6 pro-item portfolio-item financial">
-						<div class="card h-100">
-							<div class="card-img">
-								<a href="images/portfolio-img-01.jpg" data-fancybox="images">
-									<img class="card-img-top" src="{{asset('assets/images/portfolio-img-01.jpg')}}" alt="" />
-									<div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-								</a>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#">Financial Sustainability</a>
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 pro-item portfolio-item business academic">
-						<div class="card h-100">
-							<div class="card-img">
-								<a href="images/portfolio-img-02.jpg" data-fancybox="images">
-									<img class="card-img-top" src="{{asset('assets/images/portfolio-img-02.jpg')}}" alt="" />
-									<div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-								</a>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#">Financial Sustainability</a>
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-						<div class="card h-100">
-							<div class="card-img">
-								<a href="images/portfolio-img-03.jpg" data-fancybox="images">
-									<img class="card-img-top" src="{{asset('assets/images/portfolio-img-03.jpg')}}" alt="" />
-									<div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-								</a>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#">Financial Sustainability</a>
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 pro-item portfolio-item business">
-						<div class="card h-100">
-							<div class="card-img">
-								<a href="images/portfolio-img-04.jpg" data-fancybox="images">
-									<img class="card-img-top" src="{{asset('assets/images/portfolio-img-04.jpg')}}" alt="" />
-									<div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-								</a>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#">Financial Sustainability</a>
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 pro-item portfolio-item travel">
-						<div class="card h-100">
-							<div class="card-img">
-								<a href="images/portfolio-img-05.jpg" data-fancybox="images">
-									<img class="card-img-top" src="{{asset('assets/images/portfolio-img-05.jpg')}}" alt="" />
-									<div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-								</a>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#">Financial Sustainability</a>
-								</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 pro-item portfolio-item financial academic">
-						<div class="card h-100">
-							<div class="card-img">
-								<a href="images/portfolio-img-01.jpg" data-fancybox="images">
-									<img class="card-img-top" src="{{asset('assets/images/portfolio-img-01.jpg')}}" alt="" />
-									<div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-								</a>
-							</div>
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#">Financial Sustainability</a>
-								</h4>
-							</div>
-						</div>
-					</div>
-				</div>
+				<h2>Our Projects</h2>
+				<div id="projects" class="projects-main row" style="position: relative; height: 460px;"></div>
 				<!-- /.row -->
 			</div>
 		</div>
@@ -491,3 +258,119 @@
 	</div>
 
 	@include('layouts.js-packages')
+
+
+	<script>
+		function service() {
+			let name;
+			let path;
+
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				type: 'GET',
+				dataType: 'json',
+				url: '/services',
+
+				success: function(response) {
+					let count = response.data;
+					for (var i = 0; i < count.length; i++) {
+						document.getElementById("row-services").innerHTML += '<div class="col-lg-4 mb-4">' +
+							'<div class="card h-100">' +
+							'<div class="card-img">' +
+							'<img class="img-fluid" src="storage/' + response.data[i]['image'] + '" />' +
+							'</div>' +
+							'<div class="card-body">' +
+							'<h4 class="card-header">' + response.data[i]['name'] + '</h4>' +
+							'<p class="card-text">' + response.data[i]['description'] + '</p>' +
+							'</div>' +
+							'</div>' +
+							'</div>';
+
+					}
+				},
+				error: function(data) {}
+			});
+		}
+
+		function project() {
+			let name;
+			let path;
+
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+
+			$.ajax({
+				type: 'GET',
+				dataType: 'json',
+				url: '/projects',
+
+				
+				success: function(response) {
+					
+					let count = response.data;
+					for (var i = 0; i < count.length; i++) {
+						document.getElementById("projects").innerHTML += '<div class="col-lg-4 col-sm-6  pro-item portfolio-item financial">' +
+							'<div class="card h-100">' +
+							'<div class="card-img">' +
+							'<a href="storage/' + response.data[i]['image'] + '" data-fancybox="images">' +
+							'<img class="card-img-top" src="storage/' + response.data[i]['image'] + '" alt="" />' +
+							'<div class="overlay"><i class="fas fa-arrows-alt"></i></div>' +
+							'</a>' +
+							'</div>' +
+							'<div class="card-body">' +
+							'<h4 class="card-title">' +
+							'<a href="#">Financial Sustainability</a>' +
+							'</h4>' +
+							'</div>' +
+							'</div>' +
+							'</div>';
+					}
+				},
+				error: function(data) {}
+			});
+		}
+
+		function navbar_menu() {
+			let li, a;
+			let ul = document.getElementById("navbar-ul");
+
+			$.ajax({
+				type: 'GET',
+				dataTyp: 'json',
+				url: '/navbar',
+				success: function(response) {
+					let count = response.data;
+					for (var i = 0; i < count.length; i++) {
+						li = document.createElement("li");
+						a = document.createElement("a")
+						a.textContent = response.data[i];
+						if (response.data[i] == 'Home') {
+							a.setAttribute("href", "/");
+							a.classList.add("active");
+						} else {
+							a.setAttribute("href", response.data[i]);
+						}
+						a.classList.add("nav-link");
+						li.classList.add("nav-item");
+						ul.appendChild(li);
+						li.appendChild(a);
+					}
+				},
+				error: function(data) {}
+			});
+		}
+
+		$(document).ready(function(e) {
+		
+			service();
+			project();
+		});
+	</script>
